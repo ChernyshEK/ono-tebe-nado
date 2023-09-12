@@ -1,21 +1,24 @@
 .header {
-    display: flex;
-    width: 1340px;
-    height: 109px;
+    display: grid;
+    grid-template-columns: 388px 148px 240px;
+    justify-content: space-between;
+    max-width: 1340px;
+    max-height: 109px;
     margin: 92px 50px;
-    flex-shrink: 0;
-}
-.header__links-list-item {
-    display: inline-block;
 }
 
 .header__links-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 43px;
+    align-items: center;
     color: #000;
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     list-style: circle;
+    text-underline-offset: 5px;
 }
 
 .header__links-list-item_no-bullit {
@@ -23,9 +26,9 @@
 }
 
 .header__logo {
-    width: 78px;
-    margin-left: auto;
-    margin-right: auto;
+    position: relative;
+    display: block;
+    right: 73px;
 }
 
 .header__logo-image {
@@ -33,84 +36,98 @@
     height: 105px;
 }
 
-.header__address {
+.address {
     color: #000;
     font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-style: normal;
+    text-underline-offset: 4px;
     font-weight: 400;
     line-height: 1.35;
 }
 
-.cover {
+.header__address {
     position: relative;
+    top: 6px;
+}
+
+.cover {
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 0;
     width: 1440px;
     height: 757px;
-    margin: 96px 0 180px 0;
-    background-image: url(/images/cover.jpg);
+    margin: 93px 0 180px 0;
+    background-image: url(../images/cover.jpg);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 100% 100%;
 }
 
 .overlay {
     position: absolute;
     left: 0;
     top: 0;
-    width: 1440px;
-    height: 757px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
     opacity: 0.6;
     background: #000;
-    z-index: 0;
 }
 
 .cover__title {
-    color: #000;
-    font-family: 'Raleway', sans-serif;
-    font-size: 100px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: 30px;
-    text-transform: uppercase;
+    position: absolute;
+    z-index: 2;
 }
 
 .aligned-text {
     display: block;
     text-align: start;
     width: 1340px;
-    margin: 165px 50px 20px 50px;
+    margin: 172px 50px 28px 50px;
     color: #FFF;
     font-family: 'Raleway', sans-serif;
     font-size: 100px;
     font-style: normal;
+    letter-spacing: 30px;
     font-weight: 700;
     line-height: 100%;
-    letter-spacing: 30px;
     text-transform: uppercase;
-    z-index: 1;
 }
 
+.letter-spacing-extended {
+    letter-spacing: 60px;
+} 
+
 .aligned-text_center {
+    letter-spacing: 30px;
     text-align: center;
     width: 1280px;
-    margin: 20px 110px 20px 50px;
+    margin: 20px 110px 20px 80px;
 }
 
 .aligned-text_right {
     text-align: end;
-    margin: 20px 50px 237px 50px;
+    letter-spacing: 60px;
+    margin: 20px 50px 237px 80px;
 }
 
-.letter-spacing-extended {
-    letter-spacing: 20px;
+.no-letter-spacing {
+    letter-spacing: 30px;
 }
 
 .cover__description {
-    display: inline;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    z-index: 2;
 }
 
 .cover__description-text {
-    z-index: 1;
     color: #FFF;
     font-family: 'Raleway', sans-serif;
     font-size: 22px;
@@ -118,7 +135,10 @@
     font-weight: 400;
     line-height: 127.273%;
     text-transform: uppercase;
-    word-spacing: 25px;
+    word-spacing: 13pt;
+    margin-top: 13px;
+    width: 699px;
+    height: 35px;
 }
 
 .bet-button {
@@ -131,11 +151,17 @@
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
-    border: #fff;
+    border: 1px solid #fff;
+    margin-left: 10px;
+    width: 257px;
+    height: 52px;
 }
 
 .lots {
+    display: block;
     margin: 180px 50px;
+    width: 1340px;
+    height: 579px;
     }
 
 .lots__heading {
@@ -146,21 +172,46 @@
     font-weight: 700;
     line-height: normal;
     text-transform: uppercase;
+    margin-left: 40px;
+    margin-bottom: 27px;
 }
 
 .lots__card-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 430px);
+    gap: 25px;
     list-style: none;
 
 }
 
 .lots__card-list-item {
+    position: relative;
     width: 430px;
     height: 450px;
-    flex-grow: 1
 }
 
 .card-link {
+    display: block;
+    text-decoration: none;
+    height: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.card__title {   
+    position: relative;
+    top: 50px;
+    left: 40px;
+    z-index: 2;
+    height: 100%;
     width: 350px;
     color: #FFF;
     font-family: 'Raleway', sans-serif;
@@ -168,16 +219,174 @@
     font-style: normal;
     font-weight: 700;
     line-height: 120%;
-    text-decoration-line: underline;
     text-transform: uppercase;
+    text-decoration: underline;
 }
 
-.card {
-    width: 350px;
+.card-text{
+    position: relative;
+    left: 40px;
+    bottom: 50px;
+    z-index: 2;
     color: #FFF;
     font-family: 'Raleway', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
+    width: 350px;
+}
+
+.card_type_film {
+    background-image: url(../images/card-lot-01.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 430px;
+    height: 450px;
+}
+
+.card_type_book {
+    background-image: url(../images/card-lot-02.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 430px;
+    height: 450px;
+}
+
+.card_type_picture {
+    background-image: url(../images/card-lot-03.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 430px;
+    height: 450px;
+}
+
+.lots__look-more-link {
+    position: relative;
+    left: 40px;
+    bottom: -30px;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.about {
+    width: 1340px;
+    height: 487px;
+    margin: 180px 50px;
+}
+
+.about__column {
+    display: grid;
+    grid-template-columns: 430px 885px;
+    height: 100%;
+}
+
+.column-logo {
+    position: relative;
+    left: 95px;
+    top: 0;
+}
+
+.about__logo {
+    display: flex;
+    border-radius: 100%;
+    background-color: #000;
+    width: 240px;
+    height: 240px;
+    justify-content: center;
+    align-items: center;
+}
+
+.about__logo-image {
+    width: 148px;
+    height: 114px;
+}
+
+.column-about {
+    position: relative;
+    top: 101px;
+    left: 25px;
+}
+
+.about__title {
+    width: 291px;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.about__text {
+    width: 885px;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 97px;
+}
+
+.about__transfer {
+    margin-top: 25px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 356px;
+    width: 1340px;
+    height: 97px;
+    margin: 180px 50px 90px 50px;
+}
+ 
+.footer__menu-list {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    height: 64px;
+    bottom: 1px;
+    left: 1px;
+}
+
+.footer__menu-list-item {
+color: #000;
+text-align: center;
+font-family: Raleway;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-underline-offset: 5px;
+}
+
+.footer__menu-link_active {
+    text-decoration: none;
+}
+
+.footer__social-list {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+    height: 48px;
+}
+
+.footer__social-list-item {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 48px);
+    list-style: none;
+    width: 48px;
 }
